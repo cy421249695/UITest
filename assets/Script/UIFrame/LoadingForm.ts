@@ -18,16 +18,31 @@ const {ccclass, property} = cc._decorator;
 export default class LoadingForm extends BaseUIForm{
     private uiFormType:UIFormType=UIFormType.Normal;
     private uiShowMode:UIFormShowMode=UIFormShowMode.HideOther;
+
+    public loadingBar:cc.Node=null;
+    public loadingBarBackGround:cc.Node=null;
+    
+    @property
+    loadingTime:number=3;
+
+    private loadTimeCount:number=0;
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {}
+     onLoad () {
+         this.loadingBar= this.node.getChildByName("LoadingBarBack").getChildByName("loadingbar");;
+         this.loadingBarBackGround= this.node.getChildByName("LoadingBarBack");
+     }
 
     start () {
+        cc.tween(this.loadingBar).to(this.loadingTime,{width:this.loadingBarBackGround.width}).start();
         this.scheduleOnce(function()
         {
             UIManager.getInstance().showUIForm("UIPrefabs/LoginPanel");
-        },3);
+        },this.loadingTime);
     }
 
-    // update (dt) {}
+     update (dt) 
+     {
+
+     }
 }

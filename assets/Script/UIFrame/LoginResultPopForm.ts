@@ -20,17 +20,17 @@ export default class LoginResultPopForm extends BaseUIForm {
     UIFormShowMode = UIFormShowMode.ReverseChange;
 
     @property(cc.Label)
-    UserName: cc.Label;
+    UserName: cc.Label = null;
 
     @property(cc.Label)
-    Passport: cc.Label ;
+    Passport: cc.Label = null;
     // LIFE-CYCLE CALLBACKS:
     private CloseNode: cc.Button = null;
 
     onLoad() {
         this.CloseNode = this.node.getChildByName("CloseButton").getComponent(cc.Button);
-        this.UserName=this.node.getChildByName("User").getComponent(cc.Label);
-        this.Passport=this.node.getChildByName("Passport").getComponent(cc.Label);
+        this.UserName = this.node.getChildByName("User").getComponent(cc.Label);
+        this.Passport = this.node.getChildByName("Passport").getComponent(cc.Label);
     }
 
     public init(obj?: any) {
