@@ -17,8 +17,8 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class LoginForm extends BaseUIForm {
 
-    uiFormType: UIFormType = UIFormType.Normal;
-    uiShowType: UIFormShowMode = UIFormShowMode.HideOther;
+    UIFormType = UIFormType.Normal;
+    UIFormShowMode = UIFormShowMode.HideOther;
 
     private UserEditorBox: cc.EditBox = null;
 

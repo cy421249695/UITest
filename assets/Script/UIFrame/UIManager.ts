@@ -22,9 +22,9 @@ export default class UIManager extends cc.Component {
     private _NoIndependent: cc.Node = null;                         // 独立窗体
 
     private _StaCurrentUIForms: Array<BaseUIForm> = [];                     // 存储反向切换的窗体
-    private _MapAllUIForms: { [key: string]: BaseUIForm } = {};              // 所有的窗体
-    private _MapCurrentShowUIForms: { [key: string]: BaseUIForm } = {};      // 正在显示的窗体(不包括弹窗)
-    private _MapIndependentForms: { [key: string]: BaseUIForm } = {};      // 独立窗体 独立于其他窗体, 不受其他窗体的影响 
+    private _MapAllUIForms: { [key: string]: BaseUIForm } =  cc.js.createMap();                  // 所有的窗体
+    private _MapCurrentShowUIForms: { [key: string]: BaseUIForm } =  cc.js.createMap();          // 正在显示的窗体(不包括弹窗)
+    private _MapIndependentForms: { [key: string]: BaseUIForm } =  cc.js.createMap();          // 独立窗体 独立于其他窗体, 不受其他窗体的影响 
 
     private static _Instance: UIManager = null;
 

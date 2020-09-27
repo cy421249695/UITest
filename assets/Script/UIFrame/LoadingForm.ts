@@ -16,8 +16,8 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class LoadingForm extends BaseUIForm{
-    private uiFormType:UIFormType=UIFormType.Normal;
-    private uiShowMode:UIFormShowMode=UIFormShowMode.HideOther;
+    UIFormType=UIFormType.Normal;
+    UIFormShowMode=UIFormShowMode.HideOther;
 
     public loadingBar:cc.Node=null;
     public loadingBarBackGround:cc.Node=null;
